@@ -1,0 +1,56 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Category",
+      "name": "category",
+      "kind": "Grouping",
+      "description": "Headers table",
+      "requiredTypes": [
+        {
+          "text": true
+        }
+      ]
+    },
+    {
+      "displayName": "Measures",
+      "name": "measure",
+      "kind": "Measure",
+      "description": "Rows table"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "categorical": {
+        "categories": {
+          "for": {
+            "in": "category"
+          }
+        },
+        "values": {
+          "select": [
+            {
+              "bind": {
+                "to": "measure"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "table": {
+      "displayName": "Tabla",
+      "description": "Configuración de la tabla",
+      "properties": {
+        "alternate": {
+          "displayName": "Alternar",
+          "description": "Alternar colores en la tabla",
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    }
+  }
+}
